@@ -1,4 +1,5 @@
 import { Todo } from "./todo.class";
+import { sha256 } from "js-sha256";
 
 
 export class TodoList {
@@ -46,7 +47,7 @@ export class TodoList {
 
     guardarLocalStorage() {
 
-        localStorage.setItem('todo', JSON.stringify( this.todos ));
+        localStorage.setItem('todo', sha256(JSON.stringify( this.todos )));
 
     }
 
